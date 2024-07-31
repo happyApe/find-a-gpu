@@ -7,24 +7,7 @@ const authOptions: AuthOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID || '',
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
     }),
-  ],
-  pages: {
-    signIn: '/auth/signin', // Custom sign-in page
-  },
-  callbacks: {
-    async session({ session, token, user }) {
-        if (session?.user) {
-            (session.user as any).id = token.id;
-        }
-        return session;
-    },
-    async jwt({ token, user, account, profile, isNewUser }) {
-      if (account?.provider) {
-        token.id = (profile as any)?.id || '';
-      }
-      return token;
-    },
-  },
+  ]
 };
 
 const handler = NextAuth(authOptions);
