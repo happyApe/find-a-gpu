@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from '@/components/ui/button';
 import AuthButton from './AuthButton';
+// import GCPCreditsDisplay from './GCPCreditsDisplay';
 
 const Navbar = () => {
   return (
@@ -9,7 +9,7 @@ const Navbar = () => {
         <div
             className='flex items-center gap-x-4'
         >
-            <Button>GPU Credits</Button>
+            {/* <GCPCreditsDisplay /> */}
             <AuthButton />
         </div>
     </nav>

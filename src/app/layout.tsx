@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils"
 import NextAuthProviders from "@/providers/NextAuthProviders";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -19,7 +20,7 @@ export default function RootLayout({
         )}
       >
         <NextAuthProviders>
-          {children}
+          <AntdRegistry>{children}</AntdRegistry>
         </NextAuthProviders>
       </body>
     </html>
